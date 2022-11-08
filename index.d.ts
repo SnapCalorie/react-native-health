@@ -222,6 +222,16 @@ declare module 'react-native-health' {
       callback: (error: string, result: HealthValue) => void,
     ): void
 
+    getFood(
+      options: HealthInputOptions,
+      callback: (error: string, result: FoodResult[]) => void,
+    ): void
+
+    deleteFood(
+      options: HealthInputOptions,
+      callback: (error: string, success: number) => void,
+    ): void
+
     saveWater(
       options: HealthValueOptions,
       callback: (error: string, result: HealthValue) => void,
@@ -474,6 +484,22 @@ declare module 'react-native-health' {
     HKWasUserEntered?: boolean
     [key: string]: string | number | boolean
   }
+  
+  export interface FoodResult {
+      endDate:    string;
+      id:         string;
+      metadata:   Metadata;
+      nutrients:  {[nutrient: string]: number};
+      sourceId:   string;
+      sourceName: string;
+      startDate:  string;
+  }
+
+  export interface Metadata {
+      HKFoodMeal: string;
+      HKFoodType: string;
+  }
+
 
   export interface HealthValue extends BaseValue {
     value: number
@@ -505,6 +531,7 @@ declare module 'react-native-health' {
     includeManuallyAdded?: boolean
     period?: number
     anchor?: string
+    objectId?: string;
   }
 
   export interface HKWorkoutRouteSampleType {
