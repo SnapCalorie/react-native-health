@@ -1,11 +1,11 @@
 {
-  "name": "react-native-health",
-  "version": "1.13.6",
+  "name": "react-native-health_sc",
+  "version": "1.13.6_sc",
   "description": "A React Native package to interact with Apple HealthKit",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/agencyenterprise/react-native-healthkit.git"
+    "url": "git+https://github.com/SnapCalorie/react-native-health.git"
   },
   "keywords": [
     "Apple",
